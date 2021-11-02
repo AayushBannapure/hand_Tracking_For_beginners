@@ -18,7 +18,7 @@ def main():
     cTime = 0
     cap = cv2.VideoCapture(0) # This is to init Video Recording
     while True: # Loop required for a loop 
-        img = cap.read() #reading the captured video in realtime 
+        _, img = cap.read() #reading the captured video in realtime 
         img = cv2.flip(img, 1) # Fliping it on the x axis as to avoid mirror effect
         imgRGB = cv2.cvtColor(img, cv2.COLOR_BGR2RGB) # Changing BGR to RGB
         results = hands.process(imgRGB) # leaving the recognition on the AI
